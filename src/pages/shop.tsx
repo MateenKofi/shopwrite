@@ -43,10 +43,10 @@ function Shop() {
           </div>}
             {error && <div>Error: {error.message}</div>}
             {filteredProducts.length > 0 ? (
-                <div>
+                <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-4'>
                     {filteredProducts.map(product => (
                         <div key={product.id}
-                        className='mb-10 shadow-lg border-2 rounded-lg grid  p-8 cursor-default hover:scale-105 transition-all duration-200'>
+                        className=' mb-10 shadow-lg border-2 rounded-lg  p-8 cursor-default  transition-all duration-200'>
                             <Link to={`/product/${product.id}`}>
                            <div className='lg:flex gap-4 '>
                            <img src={product.image} alt={product.title} className='h-40 w-40'/>

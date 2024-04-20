@@ -49,7 +49,7 @@ const TrendingProducts:React.FC = () => {
           </TextGradient>
         </h2>
         {data && data.products && (
-          <ul className="grid lg:grid-cols-5 md:grid-cols-2 sm grid-cols-1 gap-6">
+          <ul className="grid lg:grid-cols-5 md:grid-cols-2 sm grid-cols-1 gap-4">
             {products.map((product: ProductType) => (
               <Product
                 key={product.id}

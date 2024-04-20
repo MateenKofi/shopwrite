@@ -36,12 +36,11 @@ const Home: React.FC = () => {
       <div className="grid place-items-center my-10">
         <Stat />
       </div>
-      <CarouselShowCase />
-      <Jewelry />
       <div className="grid place-items-center p-10">
-      
         <TrendingProducts />
       </div>
+      <CarouselShowCase />
+      <Jewelry />
       
     </div>
   );

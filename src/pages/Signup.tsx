@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import * as Yup from 'yup';
 import axios from 'axios';
 import toast, { Toaster } from "react-hot-toast";
+import Loading from "../components/Loading";
 
 const Signup = () => {
   // const [successMessage, setSuccessMessage] = useState("");
@@ -135,7 +136,7 @@ const Signup = () => {
             >
               {isLoading ? (
                 <div className="">
-                  <span className="loading loading-dots loading-lg text-[#716acd]"></span>
+                  <Loading/>
                 </div>
               ) : (
                 "Sign up"

@@ -6,6 +6,8 @@ import { IoMdCloseCircle } from 'react-icons/io';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../Auth/useAuth'; // Import the useAuth hook
 import toast, { Toaster } from 'react-hot-toast';
+import Loading from '../components/Loading';
+import image from '../assets/Login-amico.png'
 
 const SignIn = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -53,33 +55,33 @@ const SignIn = () => {
  
 
   return (
-    <div className="py-20">
+    <div className="p-10 max-sm:pt-20 md:pt-20">
     <Toaster
   position="top-center"
   reverseOrder={false}
 />
-      <div className=" w-full grid place-items-center">
-        <div className="lg:w-4/12 max-md:w-full max-sm:w-full grid p-4  border-2 shadow-2xl ">
+      <div className=" w-full grid lg:grid-cols-2 place-items-center">
+        <div className="w-5/6  p-4  border-2 shadow-xl rounded-xl">
           <div className="flex justify-end pb-10">
-            <span className="text-[#716acd] cursor-pointer">
+            <span className="text-[#ba68c8] cursor-pointer">
               <Link to={'/'}>
                 {' '}
                 <IoMdCloseCircle className="text-3xl" />
               </Link>
             </span>
           </div>
-          <div className="bg-[#716acd] w-full flex cursor-pointer items-center justify-center gap-2 text-white py-4">
+          <div className="bg-[#ba68c8] rounded w-full flex cursor-pointer items-center justify-center gap-2 text-white py-4">
             <h2 className="text-4xl font-bold tracking-tight ">Sign In</h2>
             <span>
-              <TbLockAccess className="text-5xl text-gray-600 hover:text-white transition-all duration-300" />
+              <TbLockAccess className="text-5xl text-white transition-all duration-300" />
             </span>
           </div>
 
           <form
             onSubmit={formik.handleSubmit}
             className="form-control w-full grid place-items-center py-4">
-            <div className="w-full flex flex-col gap-3">
-              <div className="w-full">
+            <div className="w-full flex flex-col">
+              <div className="w-full my-4">
                 <input
                   type="text"
                   placeholder="enter your username here"
@@ -118,11 +120,11 @@ const SignIn = () => {
             </div>
             <button
               type="submit"
-              className="transition-all duration-200 bg-[#716acd] btn w-full my-4 hover:bg-[#8d98d9] text-white font-bold"
+              className="transition-all duration-200 bg-[#ba68c8] btn w-full my-4 hover:bg-[#8d98d9] text-white font-bold"
               disabled={!formik.isValid || isLoading}>
               {isLoading ? (
                 <div className="">
-                  <span className="loading loading-dots loading-lg text-[#716acd]"></span>
+                  <Loading/>
                 </div>
               ) : (
                 'Sign In'
@@ -140,6 +142,9 @@ const SignIn = () => {
               </span>
             </h3>
           </Link>
+        </div>
+        <div className='w-full hidden lg:block'>
+          <img src={image} alt="main logo"  />
         </div>
       </div>
     </div>
